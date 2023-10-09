@@ -1,0 +1,35 @@
+{
+  "name": "fastify-event-bus",
+  "description": "Event bus support for Fastify. Built upon js-event-bus.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Shiva127/fastify-event-bus.git",
+  "homepage": "https://github.com/Shiva127/fastify-event-bus#readme",
+  "bugs": {
+    "url": "https://github.com/Shiva127/fastify-event-bus/issues"
+  },
+  "author": "Gilles Marchand",
+  "license": "MIT",
+  "scripts": {
+    "lint": "standard --fix | snazzy",
+    "test": "tap"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "standard --fix"
+  },
+  "devDependencies": {
+    "fastify": "^4.11.0",
+    "lint-staged": "^14.0.1",
+    "snazzy": "^9.0.0",
+    "standard": "^17.0.0",
+    "tap": "^16.3.2",
+    "yorkie": "^2.0.0"
+  },
+  "dependencies": {
+    "fastify-plugin": "^4.4.0",
+    "js-event-bus": "^1.1.1"
+  }
+}
