@@ -1,30 +1,29 @@
-import { FastifyInstance, FastifyPluginCallback } from 'fastify'
-import fastify from 'fastify'
+import fastify, { FastifyInstance, FastifyPluginCallback } from 'fastify'
 import { expectAssignable, expectType } from 'tsd'
 
-import { fastifySchedule as fastifyScheduleNamed } from '.'
-import fastifyScheduleDefault from '.'
-import * as fastifyScheduleStar from '.'
-import fastifyScheduleCjsImport = require('.')
-const fastifyScheduleCjs = require('./')
+import { fastifyEventBus as fastifyEventBusNamed } from '.'
+import fastifyEventBusDefault from '.'
+import * as fastifyEventBusStar from '.'
+import fastifyEventBusCjsImport = require('.')
+const fastifyEventBusCjs = require('./')
 
 const app: FastifyInstance = fastify()
 
-app.register(fastifyScheduleNamed)
-app.register(fastifyScheduleDefault)
-app.register(fastifyScheduleStar.default)
-app.register(fastifyScheduleStar.fastifySchedule)
-app.register(fastifyScheduleCjsImport.default)
-app.register(fastifyScheduleCjsImport.fastifySchedule)
-app.register(fastifyScheduleCjs)
+app.register(fastifyEventBusNamed)
+app.register(fastifyEventBusDefault)
+app.register(fastifyEventBusStar.default)
+app.register(fastifyEventBusStar.fastifyEventBus)
+app.register(fastifyEventBusCjsImport.default)
+app.register(fastifyEventBusCjsImport.fastifyEventBus)
+app.register(fastifyEventBusCjs)
 
-expectType<FastifyPluginCallback>(fastifyScheduleNamed)
-expectType<FastifyPluginCallback>(fastifyScheduleDefault)
-expectType<FastifyPluginCallback>(fastifyScheduleStar.default)
-expectType<FastifyPluginCallback>(fastifyScheduleStar.fastifySchedule)
-expectType<FastifyPluginCallback>(fastifyScheduleCjsImport.default)
-expectType<FastifyPluginCallback>(fastifyScheduleCjsImport.fastifySchedule)
-expectType<any>(fastifyScheduleCjs)
+expectType<FastifyPluginCallback>(fastifyEventBusNamed)
+expectType<FastifyPluginCallback>(fastifyEventBusDefault)
+expectType<FastifyPluginCallback>(fastifyEventBusStar.default)
+expectType<FastifyPluginCallback>(fastifyEventBusStar.fastifyEventBus)
+expectType<FastifyPluginCallback>(fastifyEventBusCjsImport.default)
+expectType<FastifyPluginCallback>(fastifyEventBusCjsImport.fastifyEventBus)
+expectType<any>(fastifyEventBusCjs)
 
 expectAssignable<Function>(app.eventBus.on)
 expectAssignable<Function>(app.eventBus.once)

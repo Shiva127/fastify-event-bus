@@ -9,10 +9,10 @@ declare module 'fastify' {
 
 type FastifyEventBus = FastifyPluginCallback
 
-declare namespace fastifySchedule {
-  export const fastifySchedule: FastifyEventBus
-  export { fastifySchedule as default }
+declare namespace fastifyEventBus {
+  export const fastifyEventBus: FastifyEventBus
+  export { fastifyEventBus as default }
 }
 
-declare function fastifySchedule(): ReturnType<FastifyEventBus>
-export = fastifySchedule
+declare function fastifyEventBus(): ReturnType<FastifyEventBus>
+export = fastifyEventBus
