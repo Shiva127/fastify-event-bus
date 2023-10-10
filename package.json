@@ -3,6 +3,7 @@
   "description": "Event bus support for Fastify. Built upon js-event-bus.",
   "version": "1.0.0",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "repository": "git@github.com:Shiva127/fastify-event-bus.git",
   "homepage": "https://github.com/Shiva127/fastify-event-bus#readme",
   "bugs": {
@@ -12,7 +13,9 @@
   "license": "MIT",
   "scripts": {
     "lint": "standard --fix | snazzy",
-    "test": "tap"
+    "test": "yarn test:unit && yarn test:typescript",
+    "test:unit": "tap",
+    "test:typescript": "tsd"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -21,11 +24,13 @@
     "*.js": "standard --fix"
   },
   "devDependencies": {
+    "@types/node": "^20.8.4",
     "fastify": "^4.11.0",
     "lint-staged": "^14.0.1",
     "snazzy": "^9.0.0",
     "standard": "^17.0.0",
     "tap": "^16.3.2",
+    "tsd": "^0.29.0",
     "yorkie": "^2.0.0"
   },
   "dependencies": {
