@@ -1,7 +1,7 @@
 {
   "name": "fastify-event-bus",
   "description": "Event bus support for Fastify. Built upon js-event-bus.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "types": "types/index.d.ts",
   "repository": "git@github.com:Shiva127/fastify-event-bus.git",
